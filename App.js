@@ -1,23 +1,16 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Presentation from './components/Presentation';
 import StartView from './components/StartView';
+import GroupsView from './components/GroupsView';
 
 const Stack = createStackNavigator();
 
 
 export default function App() {
-  
-
-  let goBack = ()=>{
-    if(currentPage==="picked photo"){
-      setCurrentPage("main");
-    } 
-   
-  }
 
   return (
     <NavigationContainer>
@@ -32,42 +25,69 @@ export default function App() {
           component={Presentation}
           options={{title: "Picked picture"}}
         />
+        <Stack.Screen
+          name="GroupsView"
+          component={GroupsView}
+          options={{title: "Activities"}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
    
   );
 }
-
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 10,
+    flexDirection: 'column',
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
   },
   logo: {
     width: 305,
     height: 159,
     marginBottom: 20,
   },
-  instructions: {
-    color: '#888',
-    fontSize: 18,
-    marginHorizontal: 15,
-    marginBottom: 10,
+  logoContainer: {
+    flex: 6,
+    justifyContent: 'center'
   },
-  button: {
+  buttonPic: {
     backgroundColor: 'blue',
     padding: 20,
     borderRadius: 5,
   },
-  buttonText: {
+  picButtonText: {
     fontSize: 20,
     color: '#fff',
   },
+  menueButtonText: {
+    fontSize: 15,
+    color: '#fff',
+  },
+
   thumbnail: {
     width: 300,
     height: 300,
     resizeMode: 'contain',
   },
+  menueBar: {
+    flex: 0.5,
+    padding: 20,
+    flexDirection: 'row',
+    backgroundColor: '#ggg'
+  },
+  menueButton: {
+    flex: 1,
+    backgroundColor: 'blue',
+    borderRadius: 5,
+    justifyContent: 'center',
+    alignItems:'center'
+  },
+  voidSpace: {
+    flex: 2
+  },
+  /* activityItem: {
+    flex:
+  } */
 });
+

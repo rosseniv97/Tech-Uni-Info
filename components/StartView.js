@@ -2,6 +2,7 @@ import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import logo from "../assets/logo.png"
+import { styles } from '../App'
 
 export default function StartView({navigation}) {
   let [selectedImage, setSelectedImage] = React.useState(null);
@@ -26,50 +27,35 @@ export default function StartView({navigation}) {
       imageURI: pickerResult.uri
     })
   };
+
     return (
-      <View style={styles.container}>
-        <Image source={logo} style={styles.logo} />
-        <Text style={styles.instructions}>
+      <View style={{flex:1, }}>
+        <View style={styles.menueBar}>
+          <Text style={{flex: 1}}>Hello, somebody!</Text>
+          <View style={styles.voidSpace}> 
+          </View>
+          <TouchableOpacity onPress={()=>{
+            navigation.navigate('GroupsView', {
+              itemId: 3,
+              params: ""
+            })
+          }} style={styles.menueButton}>
+            <Text style={styles.menueButtonText}>Groups</Text>
+          </TouchableOpacity>
+        </View>
         
-        </Text>
-  
-        <TouchableOpacity onPress={openImagePickerAsync} style={styles.button}>
-          <Text style={styles.buttonText}>Pick a photo</Text>
-        </TouchableOpacity>
+        <View style={styles.container}>
+          <View style={styles.logoContainer} >
+            <Image source={logo} style={styles.logo} />
+          </View>   
+          <TouchableOpacity onPress={openImagePickerAsync} style={styles.buttonPic}>
+            <Text style={styles.picButtonText}>Pick a photo</Text>
+          </TouchableOpacity>
+          <View style={styles.voidSpace}> 
+          </View>
+        </View>
       </View>
     );
   }
   
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    logo: {
-      width: 305,
-      height: 159,
-      marginBottom: 20,
-    },
-    instructions: {
-      color: '#888',
-      fontSize: 18,
-      marginHorizontal: 15,
-      marginBottom: 10,
-    },
-    button: {
-      backgroundColor: 'blue',
-      padding: 20,
-      borderRadius: 5,
-    },
-    buttonText: {
-      fontSize: 20,
-      color: '#fff',
-    },
-    thumbnail: {
-      width: 300,
-      height: 300,
-      resizeMode: 'contain',
-    },
-  });
+  
