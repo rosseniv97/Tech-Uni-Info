@@ -15,7 +15,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
+        <Stack.Screen  
           name="StartView"
           component={StartView}
           options={{title: "Tech-Uni-Share"}}
@@ -74,7 +74,7 @@ export const styles = StyleSheet.create({
     flex: 0.5,
     padding: 20,
     flexDirection: 'row',
-    backgroundColor: '#ggg'
+    backgroundColor: '#6495ed'
   },
   menueButton: {
     flex: 1,
@@ -86,8 +86,23 @@ export const styles = StyleSheet.create({
   voidSpace: {
     flex: 2
   },
-  /* activityItem: {
-    flex:
-  } */
+   activityButton: {
+    backgroundColor: 'blue',
+    padding: 10,
+    marginVertical: 5,
+    borderRadius: 5,
+    justifyContent: 'center',
+    alignItems:'center'
+  },
+  containerActivities: {
+    flex: 10,
+    flexDirection: 'row',
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: 20,
+    marginRight: 5
+  
+  } 
 });
 

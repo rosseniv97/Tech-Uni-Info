@@ -31,7 +31,7 @@ export default function StartView({navigation}) {
     return (
       <View style={{flex:1, }}>
         <View style={styles.menueBar}>
-          <Text style={{flex: 1}}>Hello, somebody!</Text>
+          <Text >Hello, somebody!</Text>
           <View style={styles.voidSpace}> 
           </View>
           <TouchableOpacity onPress={()=>{

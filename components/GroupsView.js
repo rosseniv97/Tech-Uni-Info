@@ -25,15 +25,15 @@ export default function GroupsView({route, navigation}) {
 
     function Activities({title}) {
         return (
-            <TouchableOpacity style={{flex: 2}} style={styles.menueButton}>
+            <TouchableOpacity style={styles.activityButton}>
                 <Text style={styles.menueButtonText}>{title}</Text>
             </TouchableOpacity>
         )
     }  
     return(
-        <View style={{flex:1}}>
+        <View style={{flex:1, backgroundColor: '#fff'}}>
         <View style={styles.menueBar}>
-          <Text style={{flex: 1}}>Hello, somebody!</Text>
+          <Text >Hello, somebody!</Text>
           <View style={styles.voidSpace}> 
           </View>
           <TouchableOpacity style={styles.menueButton}>
@@ -41,13 +41,14 @@ export default function GroupsView({route, navigation}) {
           </TouchableOpacity>
         </View>
         
-        <View style={styles.container}>
-            <SectionList style={{flex: 1}}
+        <View style={styles.containerActivities}>
+            
+            <SectionList
                 sections={activities}
                 keyExtractor={(item, index) => item + index}
-                renderItem={({ item }) => <Activities style={{flex: 3}} title={item} />}
+                renderItem={({ item }) => <Activities  title={item} />}
                 renderSectionHeader={({ section: { title } }) => (
-            <Text style={styles.header}>{title}</Text>
+            <Text style={{marginTop: 10, alignContent: 'center'}}>{title}</Text>
             )}
         />
     
