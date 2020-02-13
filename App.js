@@ -103,6 +103,11 @@ export const styles = StyleSheet.create({
     marginLeft: 20,
     marginRight: 5
   
+  },
+  sectionTitle: {
+    marginTop: 10,
+    textDecorationStyle: 'solid',
+    fontSize: 20
   } 
 });
 

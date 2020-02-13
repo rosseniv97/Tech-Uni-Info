@@ -1,14 +1,11 @@
 import React from 'react';
-import { SectionList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { SectionList, Text, TouchableOpacity, View } from 'react-native';
 import { styles } from '../App'
+import Header from '../controls/Header'
 
 export default function GroupsView({route, navigation}) {
 
     const activities = [
-        {
-          title: 'Administration',
-          data: ['Documents', 'Schedules', 'Alerts'],
-        },
         {
           title: 'Operating systems',
           data: ['Course works', 'Date&Time', 'Alerts'],
@@ -31,16 +28,8 @@ export default function GroupsView({route, navigation}) {
         )
     }  
     return(
-        <View style={{flex:1, backgroundColor: '#fff'}}>
-        <View style={styles.menueBar}>
-          <Text >Hello, somebody!</Text>
-          <View style={styles.voidSpace}> 
-          </View>
-          <TouchableOpacity style={styles.menueButton}>
-            <Text style={styles.menueButtonText}>Groups</Text>
-          </TouchableOpacity>
-        </View>
-        
+      <View style={{flex:1, backgroundColor: '#fff'}}>
+        <Header></Header>
         <View style={styles.containerActivities}>
             
             <SectionList
@@ -48,10 +37,9 @@ export default function GroupsView({route, navigation}) {
                 keyExtractor={(item, index) => item + index}
                 renderItem={({ item }) => <Activities  title={item} />}
                 renderSectionHeader={({ section: { title } }) => (
-            <Text style={{marginTop: 10, alignContent: 'center'}}>{title}</Text>
+            <Text style={styles.sectionTitle}>{title}</Text>
             )}
         />
-    
         </View>
       </View>
     );
