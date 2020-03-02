@@ -1,0 +1,7 @@
+Event stream:
+https://www.html5rocks.com/en/tutorials/eventsource/basics/#toc-event-stream-format
+https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events
+
+Change stream:
+https://severalnines.com/database-blog/real-time-data-streaming-mongodb-change-streams
+https://www.mongodb.com/blog/post/an-introduction-to-change-streams
